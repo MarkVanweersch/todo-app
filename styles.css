@@ -1,0 +1,306 @@
+:root {
+  /* primary colours */
+  --clr-primary-blue: hsl(220, 98%, 61%);
+  --clr-primary-gradient: linear-gradient(90deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+  /* light theme colours (lt = light theme) */
+  --clr-lt-very-light-gray: hsl(0, 0%, 98%);
+  --clr-lt-very-light-blue: hsl(236, 33%, 92%);
+  --clr-lt-light-blue: hsl(233, 11%, 84%);
+  --clr-lt-dark-blue: hsl(236, 9%, 61%);
+  --clr-lt-very-dark-blue: hsl(235, 19%, 35%);
+
+  /* dark theme colours (dt = dark theme) */
+  --clr-dt-very-dark-blue: hsl(235, 21%, 11%);
+  --clr-dt-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --clr-dt-light-grayblue: hsl(234, 39%, 85%);
+  --clr-dt-light-grayblue-hover: hsl(236, 33%, 92%);
+  --clr-dt-dark-grayblue: hsl(234, 11%, 52%);
+  --clr-dt-very-dark-grayblue-1: hsl(233, 14%, 35%);
+  --clr-dt-very-dark-grayblue-2: hsl(237, 14%, 26%);
+}
+
+/* body font size: 18px */
+
+/* font-weights 400, 700 */
+
+* {
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body, 
+h1, 
+h2, 
+ul, 
+li, 
+p, 
+input {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 18px;
+}
+
+/* general layout */
+
+.background {
+  padding-block: 4em;
+  min-height: 100vh; /* change later */
+  width: 100%;
+
+  color: white; /* delete later */
+}
+
+.app-container {
+  margin-inline: auto;
+  width: 40%; /* take a look at later */
+  min-width: 525px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+header h1 {
+  letter-spacing: 15px;
+}
+
+.theme-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.theme-icon:hover {
+  cursor: pointer;
+}
+
+.todo-list-container {
+  list-style-type: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1.25em;
+}
+
+.todo-item:first-of-type {
+  margin-bottom: 1em;
+  border-radius: 8px;
+}
+
+.todo-item:not(:first-of-type) {
+  border-bottom: 2px solid var(--clr-dt-very-dark-grayblue-2);
+}
+
+.todo-item:nth-of-type(2) {
+  border-radius: 8px 8px 0 0;
+}
+
+.todo-item-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 25px;
+  height: 25px;
+
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 50%;
+}
+
+.todo-item-checkbox:hover {
+  cursor: pointer;
+  border: none;
+  background-image: var(--clr-primary-gradient);
+}
+
+.todo-item-checkbox:hover::before {
+  content: "";
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border-radius: 50%;
+}
+
+.todo-input {
+  width: 100%;
+  font-size: 1em;
+  border: none;
+  background-color: transparent;
+}
+
+.todo-input:focus {
+  border: none;
+  outline: none;
+}
+
+.todo-item-text {
+  width: 85%;
+}
+
+.todo-item-text > p {
+  width: fit-content;
+  cursor: pointer;
+}
+
+.todo-item-text.completed {
+  text-decoration: line-through;
+}
+
+.todo-item-cross:hover {
+  cursor: pointer;
+}
+
+.todo-list-utilities-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.25em;
+  
+  font-size: 0.8em;
+}
+
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+
+
+.drag-drop-text {
+  padding-top: 4em;
+  text-align: center;
+  font-size: 0.7em;
+}
+
+
+/* dark colour theme */
+
+.background.dark {
+  background: var(--clr-dt-very-dark-blue) url(./images/bg-desktop-dark.jpg) no-repeat left top;
+}
+
+.todo-item.dark:not(:first-of-type) {
+  border-bottom: 2px solid var(--clr-dt-very-dark-grayblue-2);
+}
+
+.todo-item.dark {
+  color: var(--clr-dt-light-grayblue);
+  background-color: var(--clr-dt-dark-desaturated-blue);
+}
+
+.todo-item-checkbox.dark:hover::before {
+  background-color: var(--clr-dt-dark-desaturated-blue);
+}
+
+.todo-item-checkbox.dark {
+  border-color: var(--clr-dt-very-dark-grayblue-2);
+}
+
+.todo-input.dark {
+  color: var(--clr-dt-light-grayblue);
+}
+
+.todo-item-text.completed.dark {
+  color: var(--clr-dt-dark-grayblue);
+}
+
+.todo-list-utilities-container.dark {
+  color: var(--clr-dt-dark-grayblue);
+  background-color: var(--clr-dt-dark-desaturated-blue)
+}
+
+.item-counter-text.dark:hover {
+  cursor: pointer;
+  color: var(--clr-dt-light-grayblue-hover);
+}
+
+.filters-container.dark > *:hover {
+  cursor: pointer;
+  color: var(--clr-dt-light-grayblue-hover);
+}
+
+.filters-container.dark > *.active {
+  color: var(--clr-primary-blue);
+}
+
+.clear-completed-function.dark:hover {
+  cursor: pointer;
+  color: var(--clr-dt-light-grayblue-hover);
+}
+
+.drag-drop-text.dark {
+  color: var(--clr-dt-dark-grayblue);
+}
+
+/* light colour theme */
+
+.background.light {
+  background: var(--clr-lt-very-light-blue) url(./images/bg-desktop-light.jpg) no-repeat left top;
+}
+
+.todo-item.light:not(:first-of-type) {
+  border-bottom: 2px solid var(--clr-lt-light-blue);
+}
+
+.todo-item.light {
+  color: var(--clr-lt-very-dark-blue);
+  background-color: var(--clr-lt-very-light-gray);
+}
+
+.todo-item-checkbox.light:hover::before {
+  background-color: var(--clr-lt-very-light-gray);
+}
+
+.todo-item-checkbox.light {
+  border-color: var(--clr-lt-light-blue);
+}
+
+.todo-input.light {
+  color: var(--clr-lt-very-dark-blue);
+}
+
+.todo-item-text.completed.light {
+  color: var(--clr-lt-light-blue)
+}
+
+.todo-list-utilities-container.light {
+  color: var(--clr-lt-dark-blue);
+  background-color: var(--clr-lt-very-light-gray);
+}
+
+.filters-container.light > *:hover {
+  cursor: pointer;
+  color: var(--clr-lt-very-dark-blue);
+  font-weight: 700;
+}
+
+.filters-container.light > *.active {
+  color: var(--clr-primary-blue);
+  font-weight: 700;
+}
+
+.clear-completed-function.light:hover {
+  cursor: pointer;
+  color: var(--clr-lt-very-dark-blue);
+}
+
+.drag-drop-text.light {
+  color: var(--clr-lt-dark-blue);
+}
+
+
+
+.filters-container.mobile {
+  display: none;
+}
