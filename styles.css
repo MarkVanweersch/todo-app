@@ -78,8 +78,7 @@ body {
 
 .app-container {
   margin-inline: auto;
-  min-width: 535px;
-  max-width: 50%;
+  width: 535px;
 }
 
 header {
@@ -288,8 +287,6 @@ footer a {
   
   .app-container {
     width: 87.5%;
-    min-width: unset;
-    max-width: unset;
   }
 
   header {
