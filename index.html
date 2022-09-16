@@ -28,83 +28,96 @@
 
       <ul class="todo-list-container">
 
-        <li class="todo-item dark">
-          <div class="todo-item-checkbox dark"></div>
+        <li class="todo-item">
+          <div class="todo-item-checkbox unchecked"></div>
           <input 
           type="text" 
           name="newtodo" 
           id="todoadder" 
-          class="todo-input dark"
-          placeholder="Add a new todo..."
+          class="todo-input"
+          placeholder="Create a new todo..."
           >
         </li>
 
-        <li class="todo-item dark">
-          <div class="todo-item-checkbox dark"></div>
-          <div class="todo-item-text dark completed">
-            <p>Jog around the park 3x</p>
+        <li class="todo-item checked visible completed" draggable="true">
+          <div class="todo-item-checkbox"></div>
+          <div class="todo-item-text completed">
+            <p>Complete online JavaScript course</p>
           </div>
           <img class="todo-item-cross" src="./images/icon-cross.svg" alt="">
         </li>
 
-        <li class="todo-item dark">
-          <div class="todo-item-checkbox dark"></div>
-          <div class="todo-item-text dark">
-            <p>Jog around the park 3x</p>
+        <li class="todo-item unchecked visible" draggable="true">
+          <div class="todo-item-checkbox"></div>
+          <p class="todo-item-text">Jog around the park 3x</p>
+          <img class="todo-item-cross" src="./images/icon-cross.svg" alt="">
+        </li>
+
+        <li class="todo-item unchecked visible" draggable="true">
+          <div class="todo-item-checkbox"></div>
+          <div class="todo-item-text">
+            <p>10 minutes meditation</p>
           </div>
           <img class="todo-item-cross" src="./images/icon-cross.svg" alt="">
         </li>
 
-        <li class="todo-item dark">
-          <div class="todo-item-checkbox dark"></div>
-          <div class="todo-item-text dark">
-            <p>Jog around the park 3x</p>
+        <li class="todo-item unchecked visible" draggable="true">
+          <div class="todo-item-checkbox"></div>
+          <div class="todo-item-text">
+            <p>Read for 1 hour</p>
           </div>
           <img class="todo-item-cross" src="./images/icon-cross.svg" alt="">
         </li>
 
-        <div class="todo-list-utilities-container dark">
-
-          <p class="item-counter-text dark">x items left</p>
-
-          <div class="filters-container dark desktop">
-            <p class="all-filter dark active">All</p>
-            <p class="active-filter dark">Active</p>
-            <p class="completed-filter dark">Completed</p>
+        <li class="todo-item unchecked visible" draggable="true">
+          <div class="todo-item-checkbox"></div>
+          <div class="todo-item-text">
+            <p>Pick up groceries</p>
           </div>
+          <img class="todo-item-cross" src="./images/icon-cross.svg" alt="">
+        </li>
 
-          <p class="clear-completed-function dark">Clear completed</p>
-        </div>
+        <li class="todo-item unchecked visible" draggable="true">
+          <div class="todo-item-checkbox"></div>
+          <div class="todo-item-text">
+            <p>Complete Todo App on Frontend Mentor</p>
+          </div>
+          <img class="todo-item-cross" src="./images/icon-cross.svg" alt="">
+        </li>
         
       </ul>
 
-      <div class="filters-container dark mobile">
-        <p class="all-filter dark">All MOBILE</p>
-        <p class="active-filter dark">Active MOBILE</p>
-        <p class="completed-filter dark">Completed MOBILE</p>
+      <div class="todo-list-utilities-container">
+
+        <p><span class="item-counter"></span> items left</p>
+
+        <div class="filters-container desktop">
+          <p class="all-filter active">All</p>
+          <p class="active-filter">Active</p>
+          <p class="completed-filter">Completed</p>
+        </div>
+
+        <p class="clear-completed-function">Clear completed</p>
+        
       </div>
 
-      <div class="drag-drop-text dark">
+      <div class="filters-container mobile">
+        <p class="all-filter active">All</p>
+        <p class="active-filter">Active</p>
+        <p class="completed-filter">Completed</p>
+      </div>
+
+      <div class="drag-drop-text">
         <p>Drag and drop to reorder list</p>
       </div>
       
     </main>
+
+    <footer>
+      Challenge by <a href="https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW/hub/todo-app-Ykq9xM7cT8" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://markvanweersch.github.io/">Mark Vanweersch</a>.
+    </footer>
     
-  </div>
-
-  <!-- Add dynamic number --> items left
-
-  All
-  Active 
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
   </div>
 
 </body>
